@@ -18,6 +18,7 @@ import EditProduct from "./components/EditProduct";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import CategoryProduct from "./pages/CategoryProduct";
 import ProductDetails from "./pages/ProductDetails";
+import AddToCart from "./helpers/AddToCart";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -80,6 +81,7 @@ const App = () => {
         <Route element={<PrivateRoutes auth={auth}/>}>
           <Route path="/upload-product" element={<UploadProduct />} />
           <Route path="/edit-product/:id" element={<EditProduct />} />
+          
         </Route>
 
         {/* Above is protected route */}

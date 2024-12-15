@@ -17,6 +17,7 @@ const getProductByIdController = require("../controller/getProductsById.js");
 const deleteProductByIdController = require("../controller/deleteProductById.js");
 const getCategoryProductOne = require("../controller/getCategoryProductOne.js");
 const getCategoryWiseProduct = require("../controller/getCategoryWiseProduct.js");
+const addToCartController = require("../controller/addToCartController.js");
 
 // Route to handle user signup
 router.post("/signup", userSignUpController);
@@ -70,6 +71,7 @@ router.get("/get-procuctCategory", getCategoryProductOne); /// Find 1st product 
 
 // get the product based on category
 router.get("/category-product", getCategoryWiseProduct);
-// Find product based on category
 
+// user add to cart
+router.post("/addtocart",authToken, addToCartController)
 module.exports = router;

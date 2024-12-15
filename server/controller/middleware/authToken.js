@@ -5,7 +5,7 @@ async function authToken(req, res, next) {
      const token = req.cookies?.authToken
 
     if (!token) {
-      return res.status(401).json({ success: false, message: "Unauthorized access. No token provided." });
+      return res.status(401).json({ success: false, message: "Unauthorized access. Please login." });
     }
 // console.log(token);
     // Remove "Bearer " prefix if token is in the Authorization header

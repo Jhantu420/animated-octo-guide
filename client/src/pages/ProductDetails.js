@@ -3,6 +3,7 @@ import { FaStar, FaStarHalf } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 
 import VarticalCardProduct from "../components/VarticalCardProduct";
+import AddToCart from "../helpers/AddToCart";
 
 function ProductDetails() {
   const [loading, setLoading] = useState(true);
@@ -147,7 +148,12 @@ function ProductDetails() {
                 <button className="px-10 py-2 border-2 border-red-500 hover:text-white text-red-600 rounded-lg shadow hover:bg-red-500 transition duration-300">
                   Buy
                 </button>
-                <button className="px-2 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600 transition duration-300">
+                <button
+                  className="bg-red-600 text-white text-xs font-semibold px-3 py-2 mt-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  onClick={(e) => {
+                    AddToCart(e, id);
+                  }}
+                >
                   Add to Cart
                 </button>
               </div>
